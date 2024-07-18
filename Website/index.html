@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Postcode Distance Calculator</title>
+        <link rel="stylesheet" href="scripts/style.css">
+        <script src="scripts/script.js"></script>
+    </head>
+
+    <body>
+        <!--HEADING-->
+        <div id="title" class="heading">
+            <h1>Postcode Distance Calculator</h1>
+        </div>
+
+        <!--CONTAINER-->
+        <div id="container">
+            <!--POSTCODE 1-->
+            <div id="pc1" class="pcBox box">
+                <h2 class="pcHeading heading">Postcode 1</h2>
+                <label class="text">Select postcode:</label>
+                <select id="pc1List" class="pcList" oninput="onInput_pc1List(this)"></select>
+                <ul id="pc1Info" class="text"></ul>
+            </div>
+
+            <!--SUB-CONTAINER-->
+            <div id="subContainer">
+                <!--DISTANCE CALCULATOR-->
+                <div id="dc" class="box">
+                    <h2 class="dcHeading heading">Distance Calculator:</h2>
+                    <h2 id="miles" class="heading">-- Miles</h2>
+                </div>
+
+                <!--MANIPULATE DATA-->
+                <div id="addEditRemove" class="box">
+                    
+                    <!--ADD POSTCODE-->
+                    <h2 class="dcHeading heading">Add Postcode</h2>
+                    <p>
+                        To add a postcode to the list, enter below and click 'Submit'.<br>
+                        Enter in format 'AB123CD'.
+                    </p>
+                    <p id="addError" class="invalid">**INVALID POSTCODE**</p>
+                    <div id="addPostcode">
+                        <label class="text">Postcode:</label>
+                        <input type="text" id="inputAddPostcode" class="input">
+                        <input class="submit" type="submit" onclick="onClickAddPostcode()" value="Submit">
+                    </div>
+                    
+                    <!--EDIT POSTCODE-->
+                    <h2 class="dcHeading heading">Edit Postcode</h2>
+                    <p>
+                        Select the postcode you wish to edit from the dropdown and enter the new postcode followed by clicking 'Submit'.<br>
+                        Enter in format 'AB123CD'.
+                    </p>
+                    <div id="editList">
+                        <select id="editPCList" class="pcList"></select>
+                    </div>
+                    <p id="editError" class="invalid">**INVALID POSTCODE**</p>
+                    <div id="editPostcode">
+                        <label class="text">Postcode:</label>
+                        <input type="text" id="inputEditPostcode" class="input">
+                        <input class="submit" type="submit" onclick="onClickEditPostcode()" value="Submit">
+                    </div>
+
+                    <!--REMOVE POSTCODE-->
+                    <h2 class="dcHeading heading">Remove Postcode</h2>
+                    <p>
+                        To remove a postcode, select it from the dropdown list and click 'Remove'.
+                    </p>
+                    <div id="pcRemove">
+                        <select id="removePCList" class="pcList"></select>
+                        <input class="submit" type="submit" onclick="onClickRemovePostcode()" value="Remove">
+                    </div>
+                </div>
+            </div>
+
+            <!--POSTCODE 2-->
+            <div id="pc2" class="pcBox box">
+                <h2 class="pcHeading heading">Postcode 2</h2>
+                <label class="text">Select postcode:</label>
+                <select id="pc2List" class="pcList" oninput="onInput_pc2List(this)"></select>
+                <ul id="pc2Info" class="text"></ul>
+            </div>
+        </div>
+    </body>
+</html>
